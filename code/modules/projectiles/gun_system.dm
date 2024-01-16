@@ -240,14 +240,6 @@
 	var/shell_speed_mod = 0
 	///Modifies projectile damage by a % when a marine gets passed, but not hit
 	var/iff_marine_damage_falloff = 0
-	///Determines how fire delay is changed when aim mode is active
-	var/aim_fire_delay = 0
-	///Holds the values modifying aim_fire_delay
-	var/list/aim_fire_delay_mods = list()
-	///Determines character slowdown from aim mode. Default is 66%
-	var/aim_speed_modifier = 6
-	/// Time to enter aim mode, generally one second.
-	var/aim_time = 1 SECONDS
 
 	///How many shots can the weapon shoot in burst? Anything less than 2 and you cannot toggle burst.
 	var/burst_amount = 1

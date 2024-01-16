@@ -303,8 +303,6 @@ Note that this means that snipers will have a slowdown of 3, due to the scope
 	flags_gun_features = GUN_WIELDED_FIRING_ONLY|GUN_AMMO_COUNTER|GUN_SMOKE_PARTICLES
 	attachable_offset = list("muzzle_x" = 32, "muzzle_y" = 17,"rail_x" = 22, "rail_y" = 21, "under_x" = 32, "under_y" = 14, "stock_x" = 20, "stock_y" = 14)
 	starting_attachment_types = list(/obj/item/attachable/scope/slavic)
-	aim_fire_delay = 0.8 SECONDS
-	aim_speed_modifier = 0.75
 
 	fire_delay = 1.2 SECONDS
 	burst_amount = 1
@@ -411,8 +409,6 @@ Note that this means that snipers will have a slowdown of 3, due to the scope
 	gun_firemode_list = list(GUN_FIREMODE_AUTOMATIC)
 	attachable_allowed = list(/obj/item/attachable/flashlight, /obj/item/attachable/magnetic_harness)
 	attachable_offset = list("muzzle_x" = 33, "muzzle_y" = 19,"rail_x" = 10, "rail_y" = 21, "under_x" = 24, "under_y" = 14, "stock_x" = 24, "stock_y" = 12)
-	aim_fire_delay = 0.1 SECONDS
-	aim_speed_modifier = 12
 
 	fire_delay = 0.15 SECONDS
 	windup_delay = 0.4 SECONDS
@@ -529,8 +525,6 @@ Note that this means that snipers will have a slowdown of 3, due to the scope
 	starting_attachment_types = list(/obj/item/weapon/gun/flamer/hydro_cannon/pepperball)
 
 	gun_firemode_list = list(GUN_FIREMODE_AUTOMATIC)
-	aim_fire_delay = 0.1 SECONDS
-	aim_speed_modifier = 0.1
 
 	flags_gun_features = GUN_AMMO_COUNTER
 

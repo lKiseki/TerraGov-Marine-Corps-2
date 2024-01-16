@@ -129,8 +129,6 @@
 	flags_gun_features = GUN_CAN_POINTBLANK|GUN_AMMO_COUNTER|GUN_SMOKE_PARTICLES
 	gun_firemode_list = list(GUN_FIREMODE_AUTOMATIC)
 	attachable_offset = list("muzzle_x" = 32, "muzzle_y" = 15,"rail_x" = 22, "rail_y" = 22, "under_x" = 17, "under_y" = 15, "stock_x" = 24, "stock_y" = 10)
-	aim_fire_delay = 0.1 SECONDS
-	aim_speed_modifier = 0.55
 	accuracy_mult = 1.05
 	accuracy_mult_unwielded = 0.9
 	scatter = 1
@@ -367,8 +365,6 @@
 
 	flags_gun_features = GUN_CAN_POINTBLANK|GUN_AMMO_COUNTER|GUN_SMOKE_PARTICLES
 	attachable_offset = list("muzzle_x" = 38, "muzzle_y" = 19,"rail_x" = 13, "rail_y" = 21, "under_x" = 26, "under_y" = 15, "stock_x" = 19, "stock_y" = 13)
-	aim_fire_delay = 0.15 SECONDS
-	aim_speed_modifier = 2.5
 
 	starting_attachment_types = list(
 		/obj/item/attachable/stock/ppsh,
@@ -633,8 +629,6 @@
 	starting_attachment_types = list(/obj/item/attachable/stock/icc_pdw)
 
 	attachable_offset = list("muzzle_x" = 30, "muzzle_y" = 17,"rail_x" = 13, "rail_y" = 20, "under_x" = 31, "under_y" = 13, "stock_x" = 9, "stock_y" = 10)
-	aim_fire_delay = 0.1 SECONDS
-	aim_speed_modifier = 0.55
 
 	burst_amount = 1
 	fire_delay = 0.15 SECONDS

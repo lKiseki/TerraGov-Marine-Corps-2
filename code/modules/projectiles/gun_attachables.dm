@@ -212,7 +212,6 @@ inaccurate. Don't worry if force is ever negative, it won't runtime.
 		master_gun.scatter_increase_unwielded   += scatter_increase_unwielded_mod
 		master_gun.min_scatter                  += min_scatter_mod
 		master_gun.min_scatter_unwielded        += min_scatter_unwielded_mod
-		master_gun.aim_speed_modifier			+= initial(master_gun.aim_speed_modifier)
 		master_gun.iff_marine_damage_falloff	+= shot_marine_damage_falloff
 		if(delay_mod)
 			master_gun.modify_fire_delay(delay_mod)
@@ -259,7 +258,6 @@ inaccurate. Don't worry if force is ever negative, it won't runtime.
 		master_gun.scatter_increase_unwielded   -= scatter_increase_unwielded_mod
 		master_gun.min_scatter                  -= min_scatter_mod
 		master_gun.min_scatter_unwielded        -= min_scatter_unwielded_mod
-		master_gun.aim_speed_modifier			-= initial(master_gun.aim_speed_modifier)
 		master_gun.iff_marine_damage_falloff	-= shot_marine_damage_falloff
 		if(delay_mod)
 			master_gun.modify_fire_delay(-delay_mod)

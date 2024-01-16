@@ -32,7 +32,6 @@
 	)
 
 	flags_gun_features = GUN_CAN_POINTBLANK|GUN_AMMO_COUNTER|GUN_SMOKE_PARTICLES
-	aim_speed_modifier = 0.65
 	scatter = -2
 	scatter_unwielded = 4
 	akimbo_additional_delay = 0.9
@@ -454,7 +453,6 @@
 	recoil = -2
 	recoil_unwielded = -2
 	scatter_unwielded = 0
-	aim_speed_modifier = 0
 
 
 //-------------------------------------------------------

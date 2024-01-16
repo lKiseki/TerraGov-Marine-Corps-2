@@ -16,5 +16,3 @@
 			Fail("[gun] has a wield delay that is not a multiple of 0.5.")
 		if(gun.wield_penalty * 10 % 5)
 			Fail("[gun] has a wield penalty that is not a multiple of 0.5.")
-		if(gun.aim_fire_delay * 10 % 5)
-			Fail("[gun] has an aim fire delay that is not a multiple of 0.5.")
