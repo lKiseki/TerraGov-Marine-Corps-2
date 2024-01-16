@@ -685,8 +685,6 @@
 			wdelay += wield_penalty
 	wield_time = world.time + wdelay
 	do_wield(user, wdelay)
-	if(HAS_TRAIT(src, TRAIT_GUN_AUTO_AIM_MODE))
-		toggle_aim_mode(user)
 
 
 /obj/item/weapon/gun/unwield(mob/user)
@@ -696,9 +694,6 @@
 
 	setup_bullet_accuracy()
 	user.remove_movespeed_modifier(MOVESPEED_ID_AIM_SLOWDOWN)
-
-	if(HAS_TRAIT(src, TRAIT_GUN_IS_AIMING))
-		toggle_aim_mode(user)
 
 	return TRUE
 
@@ -1783,7 +1778,7 @@
 	projectile_to_fire.damage_falloff *= max(0, damage_falloff_mult)
 	projectile_to_fire.projectile_speed = projectile_to_fire.ammo.shell_speed
 	projectile_to_fire.projectile_speed += shell_speed_mod
-	if(flags_gun_features & GUN_IFF || HAS_TRAIT(src, TRAIT_GUN_IS_AIMING) || projectile_to_fire.ammo.flags_ammo_behavior & AMMO_IFF)
+	if(flags_gun_features & GUN_IFF || projectile_to_fire.ammo.flags_ammo_behavior & AMMO_IFF)
 		var/iff_signal
 		if(ishuman(firer))
 			var/mob/living/carbon/human/_firer = firer
@@ -1848,9 +1843,6 @@
 			gun_accuracy_mod -= round(min(20, (shooter_human.shock_stage * 0.2))) //Accuracy declines with pain, being reduced by 0.2% per point of pain.
 			if(shooter_human.marksman_aura)
 				gun_accuracy_mod += 10 + max(5, shooter_human.marksman_aura * 5) //Accuracy bonus from active focus order
-				add_aim_mode_fire_delay(AURA_HUMAN_FOCUS, initial(aim_fire_delay) * -0.5)
-			else
-				remove_aim_mode_fire_delay(AURA_HUMAN_FOCUS)
 
 /obj/item/weapon/gun/proc/simulate_recoil(recoil_bonus = 0, firing_angle)
 	if(CHECK_BITFIELD(flags_item, IS_DEPLOYED) || !gun_user)

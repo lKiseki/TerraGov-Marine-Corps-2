@@ -101,14 +101,8 @@ inaccurate. Don't worry if force is ever negative, it won't runtime.
 	var/attach_delay = 1.5 SECONDS
 	///How long in deciseconds it takes to detach a weapon with level 1 firearms training. Default is 1.5 seconds.
 	var/detach_delay = 1.5 SECONDS
-	///Changes aim mode movement delay multiplicatively
-	var/aim_mode_movement_mult = 0
 	///Modifies projectile damage by a % when a marine gets passed, but not hit
 	var/shot_marine_damage_falloff = 0
-	///Modifies aim mode fire rate debuff by a %
-	var/aim_mode_delay_mod = 0
-	///adds aim mode to the gun
-	var/add_aim_mode = FALSE
 	///the delay between shots, for attachments that fire stuff
 	var/attachment_firing_delay = 0
 
@@ -218,14 +212,8 @@ inaccurate. Don't worry if force is ever negative, it won't runtime.
 		master_gun.scatter_increase_unwielded   += scatter_increase_unwielded_mod
 		master_gun.min_scatter                  += min_scatter_mod
 		master_gun.min_scatter_unwielded        += min_scatter_unwielded_mod
-		master_gun.aim_speed_modifier			+= initial(master_gun.aim_speed_modifier)*aim_mode_movement_mult
+		master_gun.aim_speed_modifier			+= initial(master_gun.aim_speed_modifier)
 		master_gun.iff_marine_damage_falloff	+= shot_marine_damage_falloff
-		master_gun.add_aim_mode_fire_delay(name, initial(master_gun.aim_fire_delay) * aim_mode_delay_mod)
-		if(add_aim_mode)
-			var/datum/action/item_action/aim_mode/A = new (master_gun)
-			///actually gives the user aim_mode if they're holding the gun
-			if(user)
-				A.give_action(user)
 		if(delay_mod)
 			master_gun.modify_fire_delay(delay_mod)
 		if(burst_delay_mod)
@@ -271,12 +259,8 @@ inaccurate. Don't worry if force is ever negative, it won't runtime.
 		master_gun.scatter_increase_unwielded   -= scatter_increase_unwielded_mod
 		master_gun.min_scatter                  -= min_scatter_mod
 		master_gun.min_scatter_unwielded        -= min_scatter_unwielded_mod
-		master_gun.aim_speed_modifier			-= initial(master_gun.aim_speed_modifier)*aim_mode_movement_mult
+		master_gun.aim_speed_modifier			-= initial(master_gun.aim_speed_modifier)
 		master_gun.iff_marine_damage_falloff	-= shot_marine_damage_falloff
-		master_gun.remove_aim_mode_fire_delay(name)
-		if(add_aim_mode)
-			var/datum/action/item_action/aim_mode/action_to_delete = locate() in master_gun.actions
-			QDEL_NULL(action_to_delete)
 		if(delay_mod)
 			master_gun.modify_fire_delay(-delay_mod)
 		if(burst_delay_mod)
@@ -564,7 +548,6 @@ inaccurate. Don't worry if force is ever negative, it won't runtime.
 	slot = ATTACHMENT_SLOT_RAIL
 	accuracy_mod = 0.15
 	accuracy_unwielded_mod = 0.1
-	aim_mode_delay_mod = -0.5
 	variants_by_parent_type = list(/obj/item/weapon/gun/rifle/som = "", /obj/item/weapon/gun/shotgun/som = "")
 
 /obj/item/attachable/m16sight
@@ -723,7 +706,6 @@ inaccurate. Don't worry if force is ever negative, it won't runtime.
 	wield_delay_mod = 0.2 SECONDS
 	zoom_tile_offset = 7
 	zoom_viewsize = 2
-	add_aim_mode = TRUE
 
 /obj/item/attachable/scope/mosin
 	name = "Mosin nagant rail scope"
@@ -1173,7 +1155,6 @@ inaccurate. Don't worry if force is ever negative, it won't runtime.
 	accuracy_unwielded_mod = -0.05
 	scatter_unwielded_mod = 3
 	aim_speed_mod = -0.1
-	aim_mode_movement_mult = -0.2
 
 
 /obj/item/attachable/angledgrip
@@ -1202,7 +1183,6 @@ inaccurate. Don't worry if force is ever negative, it won't runtime.
 	accuracy_unwielded_mod = 0.1
 	scatter_unwielded_mod = -2
 	recoil_unwielded_mod = -1
-	aim_mode_movement_mult = -0.5
 
 /obj/item/attachable/lasersight
 	name = "laser sight"
@@ -1416,7 +1396,6 @@ inaccurate. Don't worry if force is ever negative, it won't runtime.
 	recoil_mod = -2
 	scatter_mod = -10
 	burst_scatter_mod = -3
-	aim_mode_delay_mod = -0.5
 
 /obj/item/attachable/foldable/bipod/activate(mob/living/user, turn_off)
 	if(folded && !(master_gun.flags_item & WIELDED)) //no one handed bipod use

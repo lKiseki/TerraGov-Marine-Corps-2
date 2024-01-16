@@ -291,8 +291,6 @@
 
 	UnregisterSignal(operator, list(COMSIG_MOB_MOUSEDOWN, COMSIG_MOB_MOUSEDRAG))
 	var/obj/item/weapon/gun/gun = get_internal_item()
-	if(HAS_TRAIT(gun, TRAIT_GUN_IS_AIMING))
-		gun.toggle_aim_mode(operator)
 	gun?.UnregisterSignal(operator, COMSIG_MOB_MOUSEUP)
 
 	for(var/datum/action/action AS in gun.actions)

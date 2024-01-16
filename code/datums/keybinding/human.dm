@@ -62,12 +62,6 @@
 	full_name = "Toggle gun safety"
 	keybind_signal = COMSIG_KB_GUN_SAFETY
 
-/datum/keybinding/human/toggle_aim_mode
-	hotkey_keys = list("6")
-	name = "toggle_aim_mode"
-	full_name = "Toggle aim mode"
-	keybind_signal = COMSIG_KB_AIMMODE
-
 /datum/keybinding/human/switch_fire_mode
 	name = "switch_fire_mode"
 	full_name = "Switch fire mode"

@@ -213,8 +213,6 @@
 //All the traits for guns
 #define TRAIT_GUN_SAFETY "safety"
 #define TRAIT_GUN_FLASHLIGHT_ON "light_on"
-#define TRAIT_GUN_AUTO_AIM_MODE "auto_aim_mode"
-#define TRAIT_GUN_IS_AIMING "aiming"
 #define TRAIT_GUN_BURST_FIRING "burst_firing"
 #define TRAIT_GUN_SILENCED "silenced"
 #define TRAIT_GUN_RELOADING "reloading"

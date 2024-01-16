@@ -105,15 +105,3 @@
 
 /datum/action/item_action/firemode/handle_button_status_visuals()
 	button.color = rgb(255,255,255,255)
-
-/datum/action/item_action/aim_mode
-	name = "Take Aim"
-	action_icon_state = "aim_mode"
-	keybinding_signals = list(
-		KEYBINDING_NORMAL = COMSIG_KB_AIMMODE,
-	)
-	use_obj_appeareance = FALSE
-
-/datum/action/item_action/aim_mode/action_activate()
-	var/obj/item/weapon/gun/I = target
-	I.toggle_auto_aim_mode(owner)
