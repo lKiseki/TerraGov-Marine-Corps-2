@@ -1,5 +1,5 @@
 /obj/machinery/griddle
-	name = "griddle"
+	name = "griddly"
 	desc = "Because using pans is for pansies."
 	icon = 'icons/obj/machines/kitchenmachines.dmi'
 	icon_state = "griddle1_off"
