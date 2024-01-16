@@ -743,7 +743,7 @@
 
 /obj/item/weapon/gun/energy/lasgun/lasrifle/standard_marine_sniper
 	name = "\improper Terra Experimental laser sniper rifle"
-	desc = "The T-ES, a Terra Experimental standard issue laser sniper rifle, has multiple powerful firemodes, although the lack of aim mode can limit its tactical flexibility. Uses standard Terra Experimental (abbreviated as TE) power cells. As with all TE Laser weapons, they use a lightweight alloy combined without the need for bullets any longer decreases their weight and aiming speed quite some vs their ballistic counterparts."
+	desc = "The T-ES, a Terra Experimental standard issue laser sniper rifle, with multiple powerful firemodes. Uses standard Terra Experimental (abbreviated as TE) power cells. As with all TE Laser weapons, they use a lightweight alloy combined without the need for bullets any longer decreases their weight and aiming speed quite some vs their ballistic counterparts."
 	reload_sound = 'sound/weapons/guns/interact/standard_laser_sniper_reload.ogg'
 	fire_sound = 'sound/weapons/guns/fire/Laser Sniper Standard.ogg'
 	icon_state = "tes"
